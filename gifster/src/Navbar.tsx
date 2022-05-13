@@ -25,7 +25,7 @@ const HamburgerButton = () => {
             width="39"
             height="39"
             xmlns="http://www.w3.org/2000/svg"
-            className="menu-icon__Icon-sc-8i37s8-1 lohYMx"
+            className="hamburgerButton"
         >
             <g fill="none" fill-rule="evenodd">
                 <path d="M0 0h39v39H0z"></path>
