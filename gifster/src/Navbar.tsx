@@ -1,11 +1,3 @@
-import {
-    FC,
-    JSXElementConstructor,
-    ReactElement,
-    ReactFragment,
-    ReactPortal,
-} from "react";
-
 const Navbar = () => {
     return (
         <div className="navbar">
@@ -14,6 +6,94 @@ const Navbar = () => {
                 <div className="uploadButton">Upload</div>
                 <HamburgerButton></HamburgerButton>
             </div>
+            <HamburgerMenu></HamburgerMenu>
+        </div>
+    );
+};
+
+const HamburgerMenu = () => {
+    return (
+        <div className="hamburgerMenu">
+            <HamburgerSection title="Reactions"></HamburgerSection>
+            <HamburgerSection title="Entertainments"></HamburgerSection>
+            <HamburgerSection title="Sports"></HamburgerSection>
+            <HamburgerSection
+                title="Categories"
+                lColumn={{
+                    "GIPHY Studios": "",
+                    Animals: "",
+                    Artists: "",
+                    Emotions: "",
+                    Entertainment: "",
+                }}
+                rColumn={{
+                    Gaming: "",
+                    "Holidays/Greetings": "",
+                    Reactions: "",
+                    Sports: "",
+                    Clips: "",
+                }}
+            ></HamburgerSection>
+            <HamburgerSection
+                title="Stickers"
+                lColumn={{
+                    Originals: "",
+                    Trending: "",
+                }}
+                rColumn={{
+                    Reactions: "",
+                    Packs: "",
+                }}
+            ></HamburgerSection>
+            <HamburgerSection
+                title="About"
+                lColumn={{
+                    DMCA: "",
+                    FAQ: "",
+                    Jobs: "",
+                }}
+                rColumn={{
+                    "Engineering Blog": "",
+                    "GIPHY Arts": "",
+                    "Community Guidelines": "",
+                }}
+            ></HamburgerSection>
+        </div>
+    );
+};
+
+const HamburgerSection = (props: {
+    title: string;
+    lColumn?: { [name: string]: string };
+    rColumn?: { [name: string]: string };
+}) => {
+    const columns = (() => {
+        if (props.lColumn === undefined || props.rColumn === undefined) {
+            return <div></div>;
+        }
+        return (
+            <div className="columns">
+                <div className="column">
+                    {Object.keys(props.lColumn).map((key) => {
+                        return <a href={props.lColumn?.key}>{key}</a>;
+                    })}
+                </div>
+                <div className="column">
+                    {Object.keys(props.rColumn).map((key) => {
+                        return <a href={props.rColumn?.key}>{key}</a>;
+                    })}
+                </div>
+            </div>
+        );
+    })();
+
+    return (
+        <div className="section">
+            <h2>
+                {props.title}
+                <span>▻</span>
+            </h2>
+            {columns}
         </div>
     );
 };
