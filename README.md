@@ -2,7 +2,7 @@
 
 A responsive GIPHY clone landing page built with ReactJS, SCSS and the GIPHY API
 
-![UI](https://i.postimg.cc/76NGRDRF/GIF-30-04-2022-17-02-50.gif)
+![UI](https://i.postimg.cc/PxYkkxr3/GIF-21-05-2022-03-15-23.gif)
 
 ---
 
