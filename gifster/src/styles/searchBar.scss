@@ -16,6 +16,10 @@
 
         animation: scroll-placeholders 4s infinite;
 
+        &.hidden {
+            display: none;
+        }
+
         p {
             margin: 20px 0px;
         }
@@ -35,6 +39,7 @@
     }
 
     .searchButton {
+        border: none;
         height: 45px;
         width: 45px;
         background: linear-gradient(

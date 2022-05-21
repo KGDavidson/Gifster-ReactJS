@@ -1,36 +1,28 @@
 import { useEffect, useState } from "react";
 import { API_KEY } from "./API_KEY";
+import GIF from "./GIF";
 
-interface GIF {
-    type: string;
-    bitly_url: string;
-    id: string;
-    embed_url: string;
-    title: string;
-}
-
-const SectionGIFs = (props: { url: string }) => {
+const SectionGIFs = (props: { url: string; searchText?: string }) => {
     const [gifs, setGIFs] = useState(null);
 
-    const getTrendingGIFs = () => {
+    const getTrending = () => {
         fetch(
             props.url +
                 new URLSearchParams({
                     api_key: API_KEY,
+                    q: props.searchText ?? "",
                 })
         )
             .then((response) =>
                 response.status === 200 ? response.json() : null
             )
             .then((json) => {
-                console.log(json);
                 if (json !== null) {
                     const tmpGIFs = json.data.filter(
                         (gif: GIF) =>
                             gif === undefined ||
                             (gif.type !== "sticker" && gif.type !== "gif")
                     );
-                    console.log(tmpGIFs);
                     setGIFs(
                         json.data.map((gif: GIF) => {
                             return {
@@ -46,14 +38,14 @@ const SectionGIFs = (props: { url: string }) => {
     };
 
     useEffect(() => {
-        getTrendingGIFs();
+        getTrending();
     }, []);
 
     return (
         <div className="gifs">
             {gifs != null ? (
                 (gifs as GIF[])
-                    .slice(0, 30)
+                    .slice(0, 60)
                     .map((gif: GIF) => <GIFContainer gif={gif}></GIFContainer>)
             ) : (
                 <div></div>

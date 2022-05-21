@@ -1,20 +1,34 @@
-const SearchBar = () => {
+import { useState } from "react";
+import { API_KEY } from "./API_KEY";
+import GIF from "./GIF";
+
+const SearchBar = (props: { onSearch: (e: any, input: string) => void }) => {
+    const [input, setInput] = useState("");
+
     return (
-        <div className="searchBar">
-            <input></input>
-            <div className="placeholder">
+        <form
+            className="searchBar"
+            onSubmit={(e) => {
+                props.onSearch(e, input);
+            }}
+        >
+            <input
+                value={input}
+                onInput={(e) => setInput((e.target as HTMLInputElement).value)}
+            ></input>
+            <div className={input ? "placeholder hidden" : "placeholder"}>
                 <p>Search all the GIFs and Stickers</p>
                 <p>@username to search channels</p>
                 <p>Search all the GIFs and Stickers</p>
             </div>
             <SearchButton></SearchButton>
-        </div>
+        </form>
     );
 };
 
 const SearchButton = () => {
     return (
-        <div className="searchButton">
+        <button className="searchButton" type="submit">
             <svg
                 width="25px"
                 version="1.1"
@@ -23,7 +37,6 @@ const SearchButton = () => {
                 xmlnsXlink="http://www.w3.org/1999/xlink"
             >
                 <title>search</title>
-                <desc>Created with Sketch.</desc>
                 <defs>
                     <path
                         id="a"
@@ -40,7 +53,7 @@ const SearchButton = () => {
                     </g>
                 </g>
             </svg>
-        </div>
+        </button>
     );
 };
 export default SearchBar;

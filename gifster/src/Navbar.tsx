@@ -9,7 +9,9 @@ const Navbar = () => {
 
     return (
         <div className="navbar">
-            <h1>GIFSTER</h1>
+            <a href="/">
+                <h1>GIFSTER</h1>
+            </a>
             <div className="buttonsRow">
                 <NavbarButtons></NavbarButtons>
                 <div className="uploadButton">Upload</div>
