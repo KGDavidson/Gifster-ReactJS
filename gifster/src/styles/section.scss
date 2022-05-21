@@ -12,12 +12,17 @@
             align-items: center;
             gap: 10px;
 
-            h3 {
-                margin: 0;
+            a {
+                text-decoration: none;
+                h3 {
+                    font-size: 1.4em;
+                    margin: 0;
+                }
             }
         }
 
-        p {
+        a {
+            text-decoration: none;
             color: grey;
             margin: 0;
             font-weight: 1000;
@@ -26,6 +31,33 @@
                 margin-left: 5px;
                 font-family: "SSStandard";
                 font-size: x-small;
+            }
+        }
+    }
+
+    .gifs {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .gif {
+            height: 25vw;
+            width: 25vw;
+            iframe {
+                border: none;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .section {
+        .gifs {
+            .gif {
+                width: 10vw;
+                height: 10vw;
             }
         }
     }

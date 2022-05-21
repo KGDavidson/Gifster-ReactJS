@@ -2,16 +2,19 @@ const SectionHeader = (props: {
     title: string;
     subtitle: string;
     logo: JSX.Element;
+    url: string;
 }) => {
     return (
         <div className="sectionHeader">
             <div className="left">
                 {props.logo}
-                <h3>{props.title}</h3>
+                <a href={props.url}>
+                    <h3>{props.title}</h3>
+                </a>
             </div>
-            <p>
+            <a href={props.url}>
                 {props.subtitle} <span>▻</span>
-            </p>
+            </a>
         </div>
     );
 };

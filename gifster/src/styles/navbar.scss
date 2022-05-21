@@ -34,7 +34,7 @@
                     rgb(0, 204, 255)
                 )
                 0% 50% / 200% 50%;
-            display: flex;
+            display: none;
             flex-direction: row;
             align-items: center;
 
@@ -77,6 +77,18 @@
         top: 7vh;
         left: 0;
         right: 0;
+        transition: transform 0.1s, opacity 0.2s, visibility 0.2s;
+
+        &.fadeOut {
+            opacity: 0;
+            transform: translateY(100px);
+            visibility: hidden;
+        }
+
+        &.fadeIn {
+            opacity: 1;
+            visibility: visible;
+        }
 
         .section {
             padding: 20px 20px;
@@ -103,16 +115,19 @@
             &:nth-child(7) {
                 background: rgba(0, 0, 0, 0.6);
             }
+            a {
+                text-decoration: none;
 
-            h2 {
-                color: white;
-                font-weight: 1000;
-                font-size: x-large;
-                margin: 0;
-                span {
-                    margin-left: 5px;
-                    font-family: "SSStandard";
-                    font-size: small;
+                h2 {
+                    color: white;
+                    font-weight: 1000;
+                    font-size: x-large;
+                    margin: 0;
+                    span {
+                        margin-left: 5px;
+                        font-family: "SSStandard";
+                        font-size: small;
+                    }
                 }
             }
 
@@ -132,6 +147,26 @@
                         margin: 10px 0px;
                     }
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .navbar {
+        justify-content: start;
+        .buttonsRow {
+            flex-grow: 1;
+            justify-content: space-between;
+            .hamburgerButton {
+                display: none;
+            }
+            .uploadButton {
+                margin-right: 20px;
+            }
+
+            .navbarButtons {
+                display: flex;
             }
         }
     }

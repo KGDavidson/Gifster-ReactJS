@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import SearchBar from "./SearchBar";
 import TrendingSection from "./TrendingSection";
 import "./styles/index.scss";
+import ArtistsSection from "./ArtistsSection";
 
 const App: FC = () => {
     return (
@@ -10,6 +11,7 @@ const App: FC = () => {
             <Navbar></Navbar>
             <SearchBar></SearchBar>
             <TrendingSection></TrendingSection>
+            <ArtistsSection></ArtistsSection>
         </div>
     );
 };
