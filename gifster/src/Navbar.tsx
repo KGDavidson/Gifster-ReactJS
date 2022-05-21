@@ -160,20 +160,40 @@ const HamburgerButton = (props: { toggleMenu: () => void }) => {
 const NavbarButtons = () => {
     return (
         <div className="navbarButtons">
-            <NavbarButton text="Reactions"></NavbarButton>
-            <NavbarButton text="Entertainments"></NavbarButton>
-            <NavbarButton text="Sports"></NavbarButton>
-            <NavbarButton text="Categories"></NavbarButton>
-            <NavbarButton text="Stickers"></NavbarButton>
-            <NavbarButton text="About"></NavbarButton>
+            <NavbarButton
+                text="Reactions"
+                url="https://giphy.com/reactions"
+            ></NavbarButton>
+            <NavbarButton
+                text="Entertainment"
+                url="https://giphy.com/entertainment"
+            ></NavbarButton>
+            <NavbarButton
+                text="Sports"
+                url="https://giphy.com/sports"
+            ></NavbarButton>
+            <NavbarButton
+                text="Categories"
+                url="https://giphy.com/categories"
+            ></NavbarButton>
+            <NavbarButton
+                text="Stickers"
+                url="https://giphy.com/stickers"
+            ></NavbarButton>
+            <NavbarButton
+                text="About"
+                url="https://giphy.com/about"
+            ></NavbarButton>
         </div>
     );
 };
 
-const NavbarButton = (props: { text: string }) => {
+const NavbarButton = (props: { text: string; url: string }) => {
     return (
         <div className="navbarButton">
-            <p>{props.text}</p>
+            <a href={props.url}>
+                <p>{props.text}</p>
+            </a>
         </div>
     );
 };

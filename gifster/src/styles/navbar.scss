@@ -45,17 +45,20 @@
             .navbarButton {
                 border-right: 4px $page_background_colour solid;
 
-                p {
-                    background-color: $page_background_colour;
-                    padding: 7px 20px;
-                    margin: 0px;
-                    margin-bottom: 4px;
-                    font-size: small;
-                    font-weight: 1000;
+                a {
+                    text-decoration: none;
+                    p {
+                        background-color: $page_background_colour;
+                        padding: 7px 20px;
+                        margin: 0px;
+                        margin-bottom: 4px;
+                        font-size: small;
+                        font-weight: 1000;
 
-                    &:hover {
-                        cursor: pointer;
-                        background-color: transparent;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: transparent;
+                        }
                     }
                 }
             }
