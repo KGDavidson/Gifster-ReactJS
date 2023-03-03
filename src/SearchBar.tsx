@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { API_KEY } from "./API_KEY";
-import GIF from "./GIF";
 
 const SearchBar = (props: { onSearch: (e: any, input: string) => void }) => {
     const [input, setInput] = useState("");
