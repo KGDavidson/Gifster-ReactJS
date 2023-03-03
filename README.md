@@ -16,7 +16,7 @@ A responsive GIPHY clone landing page built with ReactJS, SCSS and the GIPHY API
 
 ## Live
 
--   Live site at https://gifster.my.to/
+-   Live site at https://gifster-js.netlify.app/
 
 ---
 
